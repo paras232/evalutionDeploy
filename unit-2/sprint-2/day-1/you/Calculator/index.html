@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            color:rgb(2, 197, 197);
+            font-size: 50px;
+        }
+        .heem{
+            height: 500px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pac{
+            background-color: #ecf0f3;
+            padding: 15px;
+            box-shadow: inset 0px 5px 15px #ffffff,
+             rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             display: grid;
+             grid-template-columns:repeat(4,80px);
+        }
+        .pac > input{
+            grid-column: span 4;
+            height: 60px;
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            border:none;
+            font-size: 60px;
+            text-align: end;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .pac button{
+            height: 60px;
+            width: 60px;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 8px;
+            border: none;
+            margin: 8px;
+            font-size: 30px;
+        }
+        #equal{
+            background-color: black;
+            color: #ffffff;
+        }
+        #add{
+            background-color: black;
+            color: #ffffff;
+        }
+        #sub{
+            background-color: black;
+            color: #ffffff;
+        }
+        #mul{
+            background-color: black;
+            color: #ffffff;
+        }
+        #sl{
+            background-color: black;
+            color: #ffffff;
+        }
+        #clear{
+            background-color:red;
+            color: #ffffff;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Masai Calculater</h1>
+    <div class="heem">
+        <div class="pac">
+        <input type="text" name="0" id="outputscreen">
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button id="add" onclick="display('+')">+</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button id="sub" onclick="display('-')">-</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button id="mul" onclick="display('x')">x</button>
+        <button id="clear" onclick="display('C')">C</button>
+        <button onclick="display('0')">0</button>
+        <button id="equal" onclick="display('=')">=</button>
+        <button id="sl" onclick="display('/')">/</button>
+        </div>
+    </div>
+</body>
+</html>
