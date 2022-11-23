@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+        body{
+            background-color: #03A9F4;
+        }
+        .key{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-auto-rows: repeat(5,30px);
+            gap:15px 10px;
+            background-color: #000;
+            padding: 30px 25px 30px 25px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        #space{
+            grid-column-start: 5;
+            grid-column-end:9 ;
+        }
+        #enter, #shift{
+            grid-column-start:11;
+            grid-column-end:13;
+        }
+        .key button{
+            height: 50px;
+            border-radius: 7px;
+            border:none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            background-color:#424242;
+            color:#03A9F4;
+        }
+    </style>
+</head>
+<body>
+    <div class="key">
+        <button>~</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        <button>delet</button>
+        <button>tab</button>
+        <button>Q</button>
+        <button>W</button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>Y</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>P</button>
+        <button>\</button>
+        <button>caps</button>
+        <button>A</button>
+        <button>S</button>
+        <button>D</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button id="enter">ENTER</button>
+        <button>SHIFT</button>
+        <button>Z</button>
+        <button>X</button>
+        <button>C</button>
+        <button>V</button>
+        <button>B</button>
+        <button>N</button>
+        <button>M</button>
+        <button><</button>
+        <button>></button>
+        <button id="shift">SHIFT</button>
+        <button>🌐</button>
+        <button>CONTROL</button>
+        <button>OPTIONS</button>
+        <button>ALT</button>
+        <button id="space">SPACE</button>
+        <button>ALT</button>
+        <button>OPTIONS</button>
+        <button><-</button>
+        <button>-></button>
+    </div>
+</body>
+</html>
