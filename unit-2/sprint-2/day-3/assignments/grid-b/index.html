@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c{
+            display:grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-auto-rows: 100px ;
+            row-gap: 20px;
+            column-gap: 20px;
+            grid-template-areas:
+            "cena cena om prakash"
+            "jeet jhon om prakash";
+
+        }
+        .c>div{
+            color:white;
+            font-size: 25px;
+        }
+        .c>div:nth-child(1){
+            background-color:gray;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-area: cena;
+            border-radius: 10px;
+           
+        }
+        .c>div:nth-child(2){
+            background-color: grey;
+            grid-area: om;
+            border-radius: 10px;
+            
+        }
+        .c>div:nth-child(3){
+            background-color: grey;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-area: jeet;
+            border-radius: 10px;
+        }
+        .c>div:nth-child(4){
+            background-color:grey;
+            border-radius: 10px;
+            
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-area: jhon;
+            border-radius: 10px;
+        }
+        .c>div:nth-child(5){
+            background-color:grey;
+            grid-area: prakash;
+            border-radius: 10px;
+        }
+        #j{
+            grid-template-rows: 140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div id="j">E</div>
+    </div>
+</body>
+</html>
