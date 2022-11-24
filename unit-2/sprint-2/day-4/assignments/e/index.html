@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQ layout</title>
+    <style>
+        .flex{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 100px;
+            grid-template-areas:
+            "yellow yellow yellow yellow"
+            "red red green green"
+            "red red green green";
+            gap:20px 50px;
+
+
+        }
+        .flex div:nth-child(1){
+            background-color: yellow;
+            grid-area: yellow;
+            font-size: 30px;
+        }
+        .flex div:nth-child(2){
+            background-color: red;
+            grid-area: red;
+            font-size: 30px;
+        }
+        .flex div:nth-child(3){
+            background-color: yellowgreen;
+            grid-area: green;
+            font-size: 30px;
+        }
+        @media all and (min-width:500px) and (max-width:700px){
+            .flex{
+                grid-template-areas:
+                "yellow yellow yellow yellow"
+                "red red red red"
+                "red red red red"
+                "green green green green"
+                "green green green green"
+                ;
+            }
+        } 
+    </style>
+</head>
+<body>
+<div class="flex">
+    <div>Navigation</div>
+    <div>left box</div>
+    <div>right box</div>
+    
+</div>
+</body>
+</html>
