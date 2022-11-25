@@ -1,0 +1,51 @@
+/* Write your styles here  */
+#header{
+  text-align: center;
+}
+#doctors{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:20px;
+  margin:auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+}
+#doctors img{
+  width: 100%;
+}
+#doctors div{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#doctors button{
+  margin:10px 30px 20px 30px;
+  border-radius: 70px;
+  height: 30px;
+  border:none;
+}
+#doctors button:nth-child(1){
+  color:rgb(20, 244, 244);
+}
+#doctors button:nth-child(2){
+  color:white;
+  background-color: red;
+}
+
+#service{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 60px;
+  background-color: white;
+  
+}
+/* keep media queries at the bottom */
+/* Medium screens */
+@media all and (min-width: 451px) and (max-width: 750px) {
+}
+/* Small screens */
+@media all and (min-width: 100px) and (max-width: 450px) {
+}
