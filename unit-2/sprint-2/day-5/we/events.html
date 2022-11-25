@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+  </head>
+  <body>
+    <button id="bell" onclick="check"> Ring Bell </button>
+  </body>
+</html>
+<script>
+  // Write js here
+  let bell=document.getElementById("bell");
+  bell.addEventListener("click",check);
+  function check(){
+    console.log("Please open the door")
+  }
+</script>
