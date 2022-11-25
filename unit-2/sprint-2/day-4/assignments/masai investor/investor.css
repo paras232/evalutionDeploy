@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+}
+.top{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+}
+#investors{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows: repeat(5,80px);
+    text-align: center;
+    width:80%;
+    gap:30px 20px;
+    margin: auto;
+}
+#investors>div>p+img{
+    width: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#investors div{
+    font-family:sans-serif;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius:10px;
+}
+#investors div+img{
+    width: 100%;
+}
+@media all and (min-width:760px) and (max-width:960px){
+    #investors{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media all and (min-width:260px) and (max-width:755px){
+    #investors{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media all and (min-width:260px) and (max-width:755px){
+    .top{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
