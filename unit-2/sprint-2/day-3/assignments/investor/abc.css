@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+}
+.top{
+    text-align: center;
+}
+#investors{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows: repeat(5,80px);
+    text-align: center;
+    width:80%;
+    gap:30px 20px;
+    margin: auto;
+}
+#investors>div>p+img{
+    width: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#investors div{
+    font-family:sans-serif;
+    font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius:10px;
+}
+#investors div+img{
+    width: 100%;
+}
