@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-101 C2</title>
+    <style>
+      /* Write all necessery styles here  */
+      h1{
+        text-align: center;
+        font-size: 70px;
+        padding: 0px;
+        margin: 0px;
+      }
+      #top>p{
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        font-size: 20px;
+      }
+      #top>div{
+        display: flex;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+        margin-top:15px
+      }
+      #top>div div:nth-child(2){
+        width: 40%;
+      }
+      #top>div div:nth-child(1){
+        width: 50%;
+        text-align: justify;
+      }
+      #top img{
+        width:100%
+      }
+      @media all and (min-width:700px) and (max-width:970px){
+        #top>div{
+          flex-direction:column;
+        }
+      }
+      @media all and (min-width:300px) and (max-width:700px){
+        #top>div{
+          flex-direction:column;
+        }
+      }
+      /*middle part/section*/
+      #mid{
+        width:80%;
+        margin:auto
+      }
+      #mid>div{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+      }
+      #mid>div div{
+        background-color:#455A64;
+        padding:10px 30px 10px 30px ;
+      }
+      #mid > p{
+        text-align:center;
+        font-size: 20px;
+      }
+      @media all and (min-width:700px) and (max-width:970px){
+        #mid>div{
+          grid-template-columns: repeat(2,1fr);
+        }
+      }
+      @media all and (min-width:300px) and (max-width:700px){
+        #mid>div{
+          grid-template-columns: repeat(1,1fr);
+        }
+      }
+      #mid img{
+        margin:30px 20px 10px 20px;
+        width: 30px;
+      }
+      /*  bottom part/section  */
+      #bottom{
+        width:80%;
+        margin:auto;
+      }      
+      #bottom>div{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+      }
+      #bottom h1,#bottom p{
+        margin: 0px;
+        padding: 0px;
+      }
+      #bottom>div div>h3{
+        text-align: justify;
+      }
+      @media all and (min-width:700px) and (max-width:970px){
+        #bottom>div{
+          grid-template-columns: repeat(2,1fr);
+        }
+      }
+      @media all and (min-width:300px) and (max-width:700px){
+        #bottom>div{
+          grid-template-columns: repeat(1,1fr);
+        }
+      }
+      #bottom>p{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="top">
+        <h1>Trillo Workbench</h1>
+        <p>Server-side Low-code Platform</p>
+        <div>
+          <!-- Here should be one div for the text part and one image. Use flex to create the layout  -->
+          <div>
+            <h2><b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet eius, at nisi magni facilis perspiciatis. Impedit sed placeat voluptate ex?</b></h2>
+            <h3>90% Cost and Time Saving</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore asperiores sint quibusdam nisi esse beatae illum iusto earum. Temporibus atque eos magni nostrum eum consequatur quisquam nulla, quidem quibusdam accusamus asperiores quos est aperiam. Consectetur incidunt iure maxime dolores hic natus doloribus explicabo ipsam saepe libero dignissimos, consequatur odio dicta.</p>
+            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, officia doloremque. Voluptatibus necessitatibus ad quibusdam incidunt nulla facere, sequi possimus tempora sapiente eligendi! Hic ullam nemo vitae repellendus! Officiis deleniti voluptates voluptatibus velit aspernatur pariatur consectetur corrupti nostrum aperiam ipsa nemo reiciendis perspiciatis quidem, neque obcaecati minus ex tenetur officia quasi eius amet illo. Illum nam molestias ab porro voluptatem.</p>
+          </div>
+          <div>
+            <img src="https://www.trillo.io/wp-content/uploads/2022/04/trillo-Workbench-UI-Macbook.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div id="mid">
+        <h1>Trillo Applications</h1>
+        <p>
+          Trillo Applications are customizable end-to-end applications (Open
+          Source Code). The can be used out of the box or extended.
+        </p>
+        <div>
+          <!-- Here you should have 6 children divs. Use grid to create the layout -->
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+          <div>
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-11-22/Screenshot%202022-11-22%20at%2012.29.09%20PM_869111.png" alt="">
+            <h3><b>Trillo Text Machine</b></h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias sit aspernatur sequi recusandae voluptatibus ab non architecto consequatur voluptates nihil!</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="bottom">
+        <h1>Use Cases</h1>
+        <p>
+          Trillo has readymade templates for several use cases that can be
+          customized quickly to deliver the solutions as per your requirements.
+          Some of these templates are described below.
+        </p>
+        <div>
+          <!-- Here you should have 6 children divs. Use grid to create the layout -->
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+          <div>
+            <h3>Lorem, ipsum dolor.</h3>
+            <ol>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo error aut eligendi?</p>
+              <p>Lorem ipsum dolor sit.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, debitis?</p>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta?</p>
+              <p>Lorem, ipsum dolor.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nostrum!</p>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
