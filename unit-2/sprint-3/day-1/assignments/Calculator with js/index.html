@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            color:rgb(2, 197, 197);
+            font-size: 50px;
+        }
+        .heem{
+            height: 500px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pac{
+            background-color: #ecf0f3;
+            padding: 15px;
+            box-shadow: inset 0px 5px 15px #ffffff,
+             rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             display: grid;
+             grid-template-columns:repeat(4,80px);
+        }
+        #output{
+            grid-column: span 4;
+            height: 60px;
+            width: 300px;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            border:none;
+            font-size: 60px;
+            text-align: end;
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .pac button{
+            height: 60px;
+            width: 60px;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 8px;
+            border: none;
+            margin: 8px;
+            font-size: 30px;
+        }
+        #equal{
+            background-color: black;
+            color: #ffffff;
+        }
+        #add{
+            background-color: black;
+            color: #ffffff;
+        }
+        #sub{
+            background-color: black;
+            color: #ffffff;
+        }
+        #mul{
+            background-color: black;
+            color: #ffffff;
+        }
+        #sl{
+            background-color: black;
+            color: #ffffff;
+        }
+        #clear{
+            background-color:red;
+            color: #ffffff;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Masai Calculater</h1>
+    <div class="heem">
+        <div class="pac">
+        <div id="output"></div>
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button id="add">+</button>
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button id="sub">-</button>
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button id="mul">x</button>
+        <button id="clear">C</button>
+        <button class="num">0</button>
+        <button id="equal">=</button>
+        <button id="sl">/</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="index.js"></script>
