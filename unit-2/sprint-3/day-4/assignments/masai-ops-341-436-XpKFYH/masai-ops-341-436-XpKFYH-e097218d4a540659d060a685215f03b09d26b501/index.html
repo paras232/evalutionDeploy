@@ -47,7 +47,7 @@
   </body>
   
   <script>
-  function frm(){
+  
     let form=document.querySelector("form")
     form.addEventListener("submit",(e)=>{
       e.preventDefault();
@@ -69,7 +69,7 @@
 
       
     });
-  }
+  
     let docData=JSON.parse(localStorage.getItem("Doclist"));
       let tbody=document.querySelector("tbody")
       if(docData==null){
@@ -100,15 +100,6 @@
         }
         let td8=document.createElement("td")
         td8.innerText="Delete"
-        td8.addEventListener("click",()=>{
-          let del=obj.filter((el,i) =>{
-            if(i===index){
-              return false
-            }else{
-              return true
-            }
-          });
-        })
 
         localStorage.setItem("Doclist",JSON.stringify(docData));
 
