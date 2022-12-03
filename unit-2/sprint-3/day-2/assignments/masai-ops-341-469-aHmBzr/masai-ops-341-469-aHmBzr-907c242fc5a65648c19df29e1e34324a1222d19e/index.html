@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Masai Doctor Records</title>
+    <title>Masai Employee Records</title>
   </head>
   <body>
-    <!-- Use this form for data input  -->
+    <!-- Use this form for taking the inputs  -->
     <form>
       <input placeholder="Name" type="text" id="name" />
-      <input placeholder="Doctor ID" type="text" id="doctor_id" />
-      <select id="specialization">
-        <option value="">Select Specialization</option>
-        <option value="Dermatologist">Dermatologist</option>
-        <option value="Dentist">Dentist</option>
-        <option value="Gynecologist">Gynecologist</option>
+      <input placeholder="Employee ID" type="text" id="employee_id" />
+      <select id="department">
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Engineering">Engineering</option>
       </select>
       <input placeholder="Experience" type="number" id="experience" />
       <input placeholder="Email" type="email" id="email" />
@@ -20,19 +20,19 @@
       <input type="submit" value="Submit" />
     </form>
 
-    <!-- Use this Select tag for filter part  -->
+    <!-- Use this select tag for filtering  -->
     <select id="filter">
-      <option value="">Select Specialization</option>
-      <option value="Dermatologist">Dermatologist</option>
-      <option value="Dentist">Dentist</option>
-      <option value="Gynecologist">Gynecologist</option>
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="Engineering">Engineering</option>
     </select>
     <table>
       <thead>
         <tr>
           <th>Name</th>
-          <th>Doctor ID</th>
-          <th>Specialization</th>
+          <th>Employee ID</th>
+          <th>Department</th>
           <th>Experience in Years</th>
           <th>Email</th>
           <th>Mobile No</th>
@@ -45,45 +45,42 @@
       </tbody>
     </table>
   </body>
-  
   <script>
-  
+
     let form=document.querySelector("form")
-    form.addEventListener("submit",(e)=>{
+    let tbody=document.querySelector("tbody")
+    let data=[]
+    form.addEventListener("submit",(e) =>{
       e.preventDefault();
-      let obj ={
-        name : form.name.value,
-        doctor_id: form.doctor_id.value,
-        specialization: form.specialization.value,
+
+    
+
+      let empdtl ={
+        name: form.name.value,
+        employee_id: form.employee_id.value,
+        department: form.department.value,
         experience: form.experience.value,
         email: form.email.value,
-        mobile: form.mobile.value
-      };
-
-      let docData=JSON.parse(localStorage.getItem("Doclist"));
-      if(docData==null){
-        docData=[]
+        mobile: form.mobile.value,
       }
-      docData.push(obj)
-      localStorage.setItem("Doclist",JSON.stringify(docData));
+      data.push(empdtl)
+    let Empdata=JSON.parse(localStorage.getItem("Userdata"));
+      if(data == null){
+         data=[]
+      }
+
 
       
-    });
-  
-    let docData=JSON.parse(localStorage.getItem("Doclist"));
-      let tbody=document.querySelector("tbody")
-      if(docData==null){
-        docData=[]
-      }
-      
-    docData.forEach((e,i) => {
+
+
+      data.forEach((e,i) =>{
         let tr=document.createElement("tr")
         let td1=document.createElement("td")
         td1.innerText=e.name
         let td2=document.createElement("td")
-        td2.innerText=e.doctor_id
+        td2.innerText=e.employee_id
         let td3=document.createElement("td")
-        td3.innerText=e.specialization
+        td3.innerText=e.department
         let td4=document.createElement("td")
         td4.innerText=e.experience
         let td5=document.createElement("td")
@@ -91,21 +88,28 @@
         let td6=document.createElement("td")
         td6.innerText=e.mobile
         let td7=document.createElement("td")
-        if(e.experience > 5 ){
+        if(e.experience>5){
           td7.innerText="Senior"
-        }else if(e.experience>2 && e.experience <=5){
+        }else if(e.experience>=2 && e.experience<=5){
           td7.innerText="Junior"
         }else if(e.experience<=1){
           td7.innerText="Trainee"
         }
         let td8=document.createElement("td")
-        td8.innerText="Delete"
+        td8.innerText="delet"
 
-        localStorage.setItem("Doclist",JSON.stringify(docData));
+        let Empdata=JSON.parse(localStorage.getItem("Userdata"));
+      if(data == null){
+         data=[]
+      }
 
         tr.append(td1,td2,td3,td4,td5,td6,td7,td8)
       tbody.append(tr)
 
-      });  
+      localStorage.setItem("Userdata",JSON.stringify("Userdata",Empdata));
+      })
+    
+      
+    })
   </script>
 </html>
