@@ -65,18 +65,8 @@
         docData=[]
       }
       docData.push(obj)
-      localStorage.setItem("Doclist",JSON.stringify(docData));
-
-      
-    });
-  
-    let docData=JSON.parse(localStorage.getItem("Doclist"));
       let tbody=document.querySelector("tbody")
-      if(docData==null){
-        docData=[]
-      }
-      
-    docData.forEach((e,i) => {
+      docData.forEach((e,i) => {
         let tr=document.createElement("tr")
         let td1=document.createElement("td")
         td1.innerText=e.name
@@ -100,12 +90,15 @@
         }
         let td8=document.createElement("td")
         td8.innerText="Delete"
-
-        localStorage.setItem("Doclist",JSON.stringify(docData));
-
         tr.append(td1,td2,td3,td4,td5,td6,td7,td8)
       tbody.append(tr)
-      });
-     
+
+      localStorage.setItem("Doclist",JSON.stringify(docData));
+  
+
+    });  
+  });
+  
+  
   </script>
 </html>
