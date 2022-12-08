@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop.in</title>
+</head>
+<body>
+    <div id="cont"></div>
+</body>
+<script>
+    let cont = document.getElementById("cont")
+    cont.style.width="70%"
+    cont.style.display="grid"
+    cont.style.grid_Template_Columns="(4,1fr)"
+    cont.style.margin="auto"
+    cont.style.gap="30px"
+    //cont.style.border="2px solid red"
+
+    
+    
+    fetch("https://fakestoreapi.com/products").then((result)=>{
+        return result.json()
+    })
+    .then((acctualdata)=>{
+        console.log(acctualdata);
+        Products(acctualdata);
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+    function Products(data){
+        data.forEach((element) => {
+            
+        
+        let pro = document.createElement("div")
+        pro.style.border="3px solid black"
+        pro.style.textAlign="center"
+        let image = document.createElement("img")
+        image.setAttribute("src",element.image)
+        image.style.width="350px"
+        let head = document.createElement("h1")
+        head.innerText= element.title
+        let discreption = document.createElement("p")
+        discreption.innerText= element.description
+        let price = document.createElement("p")
+        price.innerText= element.price
+
+        pro.append(image,head,discreption,price)
+        cont.append(pro)
+        });
+    }
+</script>
+</html>
