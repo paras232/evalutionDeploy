@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Movie App</title>
+    <style>
+      /* Write necessery styles here  */
+      #serach{
+        width: 40%;
+        margin: auto;
+      }
+      #search-inp{
+        height: 40px;
+        width: 375px;
+      }
+      #search-btn{
+        height: 45px;
+        width: 100px;
+        border: 2px solid rgb(11, 108, 149);
+        background-color:rgb(219, 216, 216);
+        font-size:18px;
+        border-radius: 5px;
+      }
+      #movie_container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        width: 90%;
+        margin: auto;
+        gap: 30px;
+        margin-top: 60px;
+        text-align: center;
+      }
+      img{
+        width: 100%;
+      }
+      #movie_container > div{
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="serach">
+      <input type="text" id="search-inp"/>
+      <button id="search-btn">Serach</button>
+      <h2 id="error"></h2>
+    </div>
+    <div id="movie_container"></div>
+  </body>
+
+  <script>
+    // Write necessery JS here
+    let cont = document.getElementById("movie_container")
+    let input = document.getElementById("search-inp")
+    let btn = document.getElementById("search-btn")
+    let errortg= document.getElementById("error")
+    
+
+    fetchMovie()
+    btn.addEventListener("click",fetchMovie)
+
+    function fetchMovie(){
+     fetch("https://www.omdbapi.com/?apiKey=17abcd01&s=avengers").then((resMo)=> resMo.json())
+      .then((acc)=>{
+        //console.log(acc)
+        let needData = acc.Search.map((element)=>{
+          let obj = {
+            Poster : element.Poster,
+            Title  : element.Title,
+          }
+          return obj
+        })
+      Movies(needData)
+      })
+     
+      .catch((error)=>{
+        errortg.innerText="Movie not found!"
+      })
+    }
+
+    function Movies(data){
+      data.forEach((element) => {
+        let card = document.createElement("div")
+        let Poster = document.createElement("img")
+        Poster.setAttribute("src",element.Poster)
+        let Title = document.createElement("h2")
+        Title.innerText = element.Title
+
+        card.append(Poster,Title)
+        cont.append(card)
+      });
+    }
+  </script>
+</html>
