@@ -58,7 +58,9 @@
     btn.addEventListener("click",fetchMovie)
 
     function fetchMovie(){
-     fetch("https://www.omdbapi.com/?apiKey=17abcd01&s=avengers").then((resMo)=> resMo.json())
+     fetch("https://www.omdbapi.com/?apiKey=17abcd01&s=avengers").then((resMo)=>{
+     return resMo.json()
+     })
       .then((acc)=>{
         //console.log(acc)
         let needData = acc.Search.map((element)=>{
