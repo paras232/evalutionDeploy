@@ -46,7 +46,7 @@
   <script>
     // All your JS code for Favourites Page goes here
     let cont = document.getElementById("fav-container")
-    let total = document.getElementById("fav-total")
+    
 
     let favouriteFData = JSON.parse(localStorage.getItem("fav"))
     if(favouriteFData === null){
@@ -77,6 +77,14 @@
 
         card.append(image,name,price,type,rating,btn)
         cont.append(card)
+
+        let sum=0;
+    let total = document.getElementById("fav-total")
+    for(let i=0;i<favouriteFData.length;i++){
+      sum += i
+    }
+    total.innerText = sum
+
       });
     }
   </script>

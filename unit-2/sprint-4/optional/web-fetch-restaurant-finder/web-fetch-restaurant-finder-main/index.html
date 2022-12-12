@@ -121,6 +121,8 @@
           }
           if(already === true){
             noti.innerText = "Restaurant Already in Favourites"
+            favouriteFData.push(element)
+            localStorage.setItem("fav",JSON.stringify(favouriteFData))
           }else{
             favouriteFData.push(element)
             localStorage.setItem("fav",JSON.stringify(favouriteFData))
