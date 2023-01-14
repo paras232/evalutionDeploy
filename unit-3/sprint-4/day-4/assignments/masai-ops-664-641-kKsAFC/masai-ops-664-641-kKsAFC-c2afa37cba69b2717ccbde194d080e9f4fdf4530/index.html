@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* All Your css for Home page goes here  */
+      #menu-container{
+        display: grid;
+        grid-column: repeat(4,1frc);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Web Coffee Shop Menu</h1>
+      <a href="./index.html">Home</a>
+      <a href="./order.html">Ordered</a>
+    </div>
+    <div id="filter">
+      <input type="number" id="lower" />
+      <input type="number" id="upper" />
+      <button id="filter-btn">Filter</button>
+    </div>
+    <select id="sort">
+      <option value="">Sort By Price</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+    <h1 id="alert"></h1>
+    <div id="menu-container">
+      <!-- Here Append All the Items  -->
+
+    </div>
+  </body>
+  <script>
+    // All your JS code for Home Page goes here
+    const url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee`;
+    let menuList = document.getElementById("menu-container")
+
+    let data =[]
+    //fetching data 
+    fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-coffee")
+    .then((res)=>{
+      return res.json()
+
+    })
+    .then((actulData)=>{
+      console.log(actulData.data);
+      displayproducts(actulData.data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+
+
+    function displayproducts(data){
+      menuList.innerHTML = null
+
+      data.forEach((element) => {
+        let card = document.createElement("div")
+
+        let img = document.createElement("img")
+        img.setAttribute("src",element.image)
+
+        let title = document.createElement("h2")
+        title.innerText = element.title
+
+        let ingredients = document.createElement("p")
+        ingredients.innerText = element.ingredients
+
+        let description = document.createElement("p")
+        description.innerText = element.description.substring(0,100)
+
+        let Price = document.createElement("h4")
+        Price.innerText = element.Price
+
+        let Buy = document.createElement("button")
+        Buy.innerText= "Buy"
+        Buy.addEventListener("click",()=>{
+          localStorage.setItem("coffeData",JSON.stringify(data))
+        })
+        card.append(img,title,ingredients,description,Price,Buy)
+        menuList.append(card)
+
+      });
+    }
+  </script>
+</html>
