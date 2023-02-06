@@ -1,0 +1,65 @@
+show dbs  //to check database
+
+use graduates   //creating db
+
+//creating new collection "users" 
+
+db.createCollection("users")   
+
+
+//inserting data in users
+
+db.users.insertMany([{
+ "first_name": "Ida",
+ "last_name": "Hammerman",
+ "percentage": 41,
+ "gender": "Female",
+ "university": "Fordham University",
+ "isMarried": false
+}, {
+ "first_name": "Phyllida",
+ "last_name": "Gauntlett",
+ "percentage": 73,
+ "gender": "Non-binary",
+ "university": "Medical Academy in Bialystok",
+ "isMarried": false
+}, {
+ "first_name": "Gilemette",
+ "last_name": "Balshen",
+ "percentage": 34,
+ "gender": "Female",
+ "university": "Universidad Rey Juan Carlos",
+ "isMarried": false
+}, {
+ "first_name": "Pebrook",
+ "last_name": "Currum",
+ "percentage": 82,
+ "gender": "Male",
+ "university": "Universidade Cruzeiro do Sul",
+ "isMarried": false
+}, {
+ "first_name": "Sidney",
+ "last_name": "Corbert",
+ "percentage": 82,
+ "gender": "Male",
+ "university": "Hogeschool voor Wetenschap en Kunst (VLEKHO), Brussel",
+ "isMarried": false
+}])
+
+//finding male Users who are non Married
+ db.users.find({gender:"Male"},{isMarried:false})
+
+//checking female users who got more tha 60%
+ db.users.find({$and:[{gender:"Female"},{percentage:{$gt:60}}]}))
+
+
+//checking users who get more tha equalto 40%
+db.users.find({Percentage:{$gt:40})
+
+
+//updateing female users
+ db.users.updateMany({gender:"Female"},{$set:{"scholarship":true}})
+
+
+//deleting users who has lessthan 60%
+ db.users.deleteMany({percentage:{$lt:60}})
