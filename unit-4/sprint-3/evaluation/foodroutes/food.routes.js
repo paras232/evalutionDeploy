@@ -4,14 +4,51 @@ const {foodModel}=require("../foodmodels/food.model")
 const foodRouter = express.Router()
 
 foodRouter.get("/",async(req,res)=>{
-    let query = req.query
+    
+    const min=req.query.min
+    const max=req.query.max
+    const cuisineF=req.query.cuisine
+    const priceG=req.query.price
 
-    try{
-        const foods=await foodModel.find(query)
-        res.send(foods)
-    }catch(err){
-        console.log(err)
-        res.send({"msg":"Connot able to get FOOD requests","error":err.message})
+    if(min && max){
+        try{
+            let foods=await foodModel.find({$and:[{min:{$gt:min}},{max:{$lt:min}}]})
+            res.send(foods)
+        }
+        catch(err){
+            console.log(err)
+            res.send({"msg":`Can not get the foods that range between ${min} and ${max}`,"error":err.message})
+        }
+    }
+    else if(cuisineF){
+        try{
+            let foods=await foodModel.find({cuisine:cuisineF})
+            res.send(foods)
+        }
+        catch(err){
+            console.log(err)
+            res.send({"msg":`Can not get the foods with cusines of ${cuisineF}`,"error":err.message})
+        }
+    }
+    else if(priceG){
+        try{
+            let foods=await foodModel.find({price:{$lt:priceG}})
+            res.send(foods)
+        }
+        catch(err){
+            console.log(err)
+            res.send({"msg":"Can not get the foods below this price","error":err.message})
+        }
+    }
+    else{
+        try{
+            let foods=await foodModel.find()
+            res.send(foods)
+        }
+        catch(err){
+            console.log(err)
+            res.send({"msg":"Can not get the foods","error":err.message})
+        }
     }
 })
 
