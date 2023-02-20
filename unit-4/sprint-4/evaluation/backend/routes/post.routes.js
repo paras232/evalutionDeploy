@@ -8,7 +8,7 @@ postRouter.get("/",async(req,res)=>{
     res.send(posts)
 })
 
-postRouter.post("/post",async(req,res)=>{
+postRouter.post("/create",async(req,res)=>{
     try{
         const payload=req.body
         const post = new postModel(payload)
