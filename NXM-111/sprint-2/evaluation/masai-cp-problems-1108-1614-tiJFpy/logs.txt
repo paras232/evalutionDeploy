@@ -1,0 +1,15 @@
+Method:POST | Route: undefined | user-agent: undefined 
+Method:POST | Route: undefined | user-agent: undefined 
+Method:GET | Route: undefined | user-agent: undefined 
+Method:GET | Route: undefined | user-agent: undefined 
+Method:GET | Route: undefined | user-agent: undefined 
+Method:GET | Route: undefined | user-agent: undefined 
+Method:PATCH | Route: undefined | user-agent: undefined 
+Method:PATCH | Route: undefined | user-agent: undefined 
+Method:PATCH | Route: undefined | user-agent: undefined 
+Method:PATCH | Route: undefined | user-agent: undefined 
+Method:DELETE | Route: undefined | user-agent: undefined 
+Method:DELETE | Route: undefined | user-agent: undefined 
+Method:DELETE | Route: undefined | user-agent: undefined 
+Method:DELETE | Route: undefined | user-agent: undefined 
+Method:POST | Route: undefined | user-agent: undefined 
